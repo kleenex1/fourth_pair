@@ -24,6 +24,7 @@ body {
   left: 0;
   z-index: -1;
   opacity: .5;
+}
 
 .card{
   overflow: hidden;

@@ -1,19 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container justify-content-center">
-    <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 25rem; height: 30rem; margin:auto;">
-        <div class="card-body text-center ">
-            <h3 class="card-title">{{review.title}}</h3>
-            <h6 class="card-subtitle mb-2 ">{% for i in ''|ljust:review.grade %}⭐{% endfor %}</h6>
-            <p class="card-text">{{review.content}}</p>
-            <a class="btn btn-outline-secondary" href="{% url 'reviews:update' review.pk %}">수정-✨</a>
-            <a class="btn btn-outline-secondary" href="{% url 'reviews:delete' review.pk %}">삭제-✨</a>
+    <div class="card shadow p-3 mb-5 rounded" style="width: 40rem; height: 50rem; margin:auto; background-color: white; opacity:1;">
+        <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+                <h3 class="card-title" style="letter-spacing:-1px;">{{review.title}}</h3>
+                <hr>
+                <h6 class="card-subtitle mb-2 ">{% for i in ''|ljust:review.grade %}⭐{% endfor %}</h6>
+            </div>
+            <div>
+            {% if review.image1 %}
+                <img src="{{ review.image1.url }}" style="width:25rem;">
+            {% endif %}
+            </div>
+            <div>
+            {% if review.image2 %}
+                <img src="{{ review.image2.url }}" style="width:25rem;">
+            {% endif %}
+            </div>
+            <div>
+            {% if review.image3 %}
+                <img src="{{ review.image3.url }}" style="width:25rem;">
+            {% endif %}
+            </div>
+            <div>
+                <p class="card-text">{{review.content}}</p>
+            </div>
+            <div>
+                <a class="btn btn-outline-secondary" href="{% url 'reviews:update' review.pk %}">수정-✨</a>
+                <a class="btn btn-outline-secondary" href="{% url 'reviews:delete' review.pk %}">삭제-✨</a>
+                <a class="btn btn-outline-secondary" href="{% url 'reviews:index' %}">목록으로-✨</a>
+            </div>
         </div>
     </div>
 </div>
-{% comment %} <h1>{{review.title}}</h1>
-<p>{{review.content}}</p>
-<div>
-{% for i in ''|ljust:review.grade %}⭐{% endfor %}
-</div> {% endcomment %}
+
 {% endblock %}
