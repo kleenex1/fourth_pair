@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 {% load django_bootstrap5%}
+
+
 {% block content %}
+<div class="container d-flex flex-column justify-content-center" style="height:100vh;">
+
 <form action="" method="POST">
     {% csrf_token %}
     {% bootstrap_form form %}
     <button type="submit" class="btn btn-outline-secondary">수정-✨</button>
     {% comment %} <a class="btn btn-outline-primary" href="{% url 'reviews:detail' review.pk %}">내맘속에수정-✨</a> {% endcomment %}
 </form>
+
+</div>
 {% endblock %}
