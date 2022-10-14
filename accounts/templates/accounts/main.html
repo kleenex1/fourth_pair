@@ -1,17 +1,20 @@
 {% extends 'base.html' %}
 
 
+{% block cover %}
+<div class="cover"></div>  
+{% endblock cover %}
 
 
 {% block content %}
+  {% if request.user.is_authenticated %}
+  <a class="btn btn-primary mb-3" href="{% url 'accounts:index' %}" role="button">회원목록</a>
+  <a class="btn btn-primary mb-3" href="{% url 'accounts:logout' %}" role="button">로그아웃</a>
+  {% else %}
+  <a class="btn btn-primary mb-3" href="{% url 'accounts:signup' %}" role="button">회원가입</a>
+  <a class="btn btn-primary mb-3" href="{% url 'accounts:login' %}" role="button">로그인</a>
+  {% endif %}
 
-{% if request.user.is_authenticated %}
-<a class="btn btn-primary mb-3" href="{% url 'accounts:index' %}" role="button">회원목록</a>
-<a class="btn btn-primary mb-3" href="{% url 'accounts:logout' %}" role="button">로그아웃</a>
-{% else %}
-<a class="btn btn-primary mb-3" href="{% url 'accounts:signup' %}" role="button">회원가입</a>
-<a class="btn btn-primary mb-3" href="#" role="button">로그인</a>
-{% endif %}
 
 {% endblock content %}
   
