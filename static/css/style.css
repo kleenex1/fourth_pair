@@ -3,7 +3,6 @@ a {
   text-decoration: none;
 }
 
-
 body {
   background-image: url('https://i.pinimg.com/564x/b0/6f/9e/b06f9ef82c7acace27fa2886aac2f4c9.jpg');
   background-repeat: no-repeat;
@@ -25,4 +24,8 @@ body {
   left: 0;
   z-index: -1;
   opacity: .5;
+
+.card{
+  overflow: hidden;
+  border-radius: 15px;
 }
