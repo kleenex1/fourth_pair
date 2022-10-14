@@ -1,4 +1,5 @@
 @import 'account.css';
+@import 'review.css';
 
 /* Global */
 body {
@@ -84,7 +85,6 @@ h1, h2, h3, h4, p {
   opacity: .2;
   width: 100%;
   height: 100%;
-
 }
 
 .login-top {
