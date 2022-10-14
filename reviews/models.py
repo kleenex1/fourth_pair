@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Review(models.Model):
     title = models.CharField(max_length=50)
@@ -13,3 +14,8 @@ class Review(models.Model):
     grade = models.IntegerField(choices=RATING, default=None)
     created_at = models.DateTimeField(auto_now_add= True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    image1 = models.ImageField(upload_to="review_pics", default=None)
+    image2 = models.ImageField(upload_to="review_pics", blank=True)
+    image3 = models.ImageField(upload_to="review_pics", blank=True)
+
