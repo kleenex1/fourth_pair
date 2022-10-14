@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>title | {{review.title}}</p>
+<p>content | {{review.content}}</p>
+<div>
+{% for i in ''|ljust:review.grade %}★{% endfor %}
+</div>
+<a class="btn btn-outline-primary" href="{% url 'reviews:update' review.pk %}">수정-✨</a>
+<a class="btn btn-outline-primary" href="{% url 'reviews:delete' review.pk %}">삭제-✨</a>
+{% endblock %}
