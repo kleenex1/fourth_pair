@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
+<div class="container d-flex flex-column justify-content-center" style="height:100vh;">
 
 <a href="{% url 'accounts:main' %}">메인으로 이동</a>
 <table class="table">
@@ -24,4 +26,5 @@
   </tbody>
 </table>
 
+</div>
 {% endblock %}

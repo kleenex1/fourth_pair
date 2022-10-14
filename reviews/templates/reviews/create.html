@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
-
-{% block content %}
 {% load django_bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
+
+<div class="container d-flex flex-column justify-content-center" style="height:100vh;">
+{% block content %}
 <form action="" method="POST">
     {% csrf_token %}
     {% bootstrap_form form %}
     <button type="submit" class="btn btn-outline-secondary">저장-✨</button>
 </form>
 {% endblock content %}
+</div>

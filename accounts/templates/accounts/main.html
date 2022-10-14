@@ -7,14 +7,17 @@
 
 
 {% block content %}
+<div class="container d-flex flex-column justify-content-center align-items-center" style="height:100vh;">
+
   {% if request.user.is_authenticated %}
-  <a class="btn btn-primary mb-3" href="{% url 'accounts:index' %}" role="button">회원목록</a>
-  <a class="btn btn-primary mb-3" href="{% url 'accounts:logout' %}" role="button">로그아웃</a>
+  <a class="btn btn-outline-primary mb-3" href="{% url 'accounts:index' %}" role="button">회원목록</a>
+  <a class="btn btn-outline-primary mb-3" href="{% url 'accounts:logout' %}" role="button">로그아웃</a>
   {% else %}
-  <a class="btn btn-primary mb-3" href="{% url 'accounts:signup' %}" role="button">회원가입</a>
-  <a class="btn btn-primary mb-3" href="{% url 'accounts:login' %}" role="button">로그인</a>
+  <h1 class="text-white text-center">🎲 멀티캠퍼스 선물 이벤트 🎲</h1>
+  <p class="text-white text-center" style="opacity: .5;">무료입니다. 다 받아가세요!!!</p>
+  <a class="main-btn" href="{% url 'accounts:login' %}" role="button">로그인</a>
   {% endif %}
 
 
+</div>
 {% endblock content %}
-  

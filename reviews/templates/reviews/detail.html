@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+
 {% block content %}
+<div class="container d-flex flex-column justify-content-center" style="height:100vh;">
+
 <div class="container justify-content-center">
     <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 25rem; height: 30rem; margin:auto;">
         <div class="card-body text-center ">
@@ -16,4 +19,6 @@
 <div>
 {% for i in ''|ljust:review.grade %}⭐{% endfor %}
 </div> {% endcomment %}
+
+</div>
 {% endblock %}
