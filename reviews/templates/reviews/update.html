@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 
+
 {% load widget_tweaks %}
 
 {% block content %}
 <form action="" method="POST" class="text-dark bg-body p-5">
+
+{% load django_bootstrap5%}
+
+
+{% block content %}
+<div class="container d-flex flex-column justify-content-center" style="height:100vh;">
+
+<form action="" method="POST">
+
     {% csrf_token %}
         <div class="text-center">
         <h3>리뷰 작성</h3>
@@ -41,4 +51,6 @@
    
     {% comment %} <a class="btn btn-outline-primary" href="{% url 'reviews:detail' review.pk %}">내맘속에수정-✨</a> {% endcomment %}
 </form>
+
+</div>
 {% endblock %}

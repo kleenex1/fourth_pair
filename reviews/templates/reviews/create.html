@@ -1,8 +1,19 @@
 {% extends 'base.html' %}
 
+
 {% load widget_tweaks %}
 {% block content %}
 <form action='' method="POST" class="text-dark bg-body p-5" enctype="multipart/form-data">
+
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<div class="container d-flex flex-column justify-content-center" style="height:100vh;">
+{% block content %}
+
+<form action="" method="POST">
+
     {% csrf_token %}
     <div class="text-center">
     <h3>리뷰 작성</h3>
@@ -37,4 +48,6 @@
         <button type="submit" class="btn btn-outline-secondary">저장-✨</button>
     </div>
 </form>
+
 {% endblock content %}
+</div>
