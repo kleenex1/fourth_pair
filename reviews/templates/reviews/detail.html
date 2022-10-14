@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<p>title | {{review.title}}</p>
-<p>content | {{review.content}}</p>
-<div>
-{% for i in ''|ljust:review.grade %}★{% endfor %}
+<div class="container justify-content-center">
+    <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 25rem; height: 30rem; margin:auto;">
+        <div class="card-body text-center ">
+            <h3 class="card-title">{{review.title}}</h3>
+            <h6 class="card-subtitle mb-2 ">{% for i in ''|ljust:review.grade %}⭐{% endfor %}</h6>
+            <p class="card-text">{{review.content}}</p>
+            <a class="btn btn-outline-secondary" href="{% url 'reviews:update' review.pk %}">수정-✨</a>
+            <a class="btn btn-outline-secondary" href="{% url 'reviews:delete' review.pk %}">삭제-✨</a>
+        </div>
+    </div>
 </div>
-<a class="btn btn-outline-primary" href="{% url 'reviews:update' review.pk %}">수정-✨</a>
-<a class="btn btn-outline-primary" href="{% url 'reviews:delete' review.pk %}">삭제-✨</a>
+{% comment %} <h1>{{review.title}}</h1>
+<p>{{review.content}}</p>
+<div>
+{% for i in ''|ljust:review.grade %}⭐{% endfor %}
+</div> {% endcomment %}
 {% endblock %}
