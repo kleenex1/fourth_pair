@@ -5,8 +5,7 @@ from .forms import ReviewForm
 # Create your views here.
 def create(request):
     if request.method == "POST":
-        form = ReviewForm(request.POST)
-
+        form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('reviews:index')
@@ -15,7 +14,6 @@ def create(request):
     context = {
         'form':form, 
     }
-        
     return render(request,'reviews/create.html', context)
 
 def index(request):
