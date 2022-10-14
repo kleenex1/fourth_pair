@@ -4,18 +4,22 @@
 
 
 {% block content %}
+
 <div class="container d-flex flex-column justify-content-center" style="height:100vh;">
-
-<a href="{% url 'accounts:update' %}">회원정보 수정</a>
-<a href="{% url 'accounts:index' %}">목록으로 이동</a>
-id | {{ user.id }}<br/>
-password | {{ user.password }}<br/>
-last_login | {{ user.last_login }}<br/>
-is_superuser | {{ user.is_superuser }}<br/>
-username | {{ user.username }}<br/>
-first_name | {{ user.first_name }}<br/>
-last_name | {{ user.last_name }}<br/>
-email | {{ user.email }}<br/>
-
+  <div class="detail-wrap">
+    <div class="detail-cover"></div>
+    <div class="detail-link d-flex justify-content-between mb-3">
+      <a href="{% url 'accounts:index' %}"><i class="fa-solid fa-arrow-left"></i> 목록으로</a>
+      <a href="{% url 'accounts:update' %}">회원정보 수정 <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    id | {{ user.id }}<br />
+    last_login | {{ user.last_login }}<br />
+    is_superuser | {{ user.is_superuser }}<br />
+    username | {{ user.username }}<br />
+    first_name | {{ user.first_name }}<br />
+    last_name | {{ user.last_name }}<br />
+    email | {{ user.email }}<br />
+  </div>
 </div>
+
 {% endblock content %}
