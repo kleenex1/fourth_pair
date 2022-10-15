@@ -2,7 +2,7 @@
 
 
 {% block cover %}
-<div class="cover"></div>  
+<div class="main-cover"></div>  
 {% endblock cover %}
 
 
@@ -13,6 +13,7 @@
   <h1 class="text-white text-center">🎲 멀티캠퍼스 선물 이벤트 🎲</h1>
   <p class="text-white text-center" style="opacity: .5;">무료입니다. 다 받아가세요!!!</p>
   <a class="main-btn mt-5" href="{% url 'reviews:create' %}" role="button">리뷰쓰기</a>
+  <p class="text-white text-center mt-1" style="opacity: .5;">{{ request.user.username }}님! 리뷰쓰러 가시죠!!</p>
   {% else %}
   <h1 class="text-white text-center">🎲 멀티캠퍼스 선물 이벤트 🎲</h1>
   <p class="text-white text-center" style="opacity: .5;">무료입니다. 다 받아가세요!!!</p>

@@ -3,15 +3,20 @@
 
 {% block content %}
 
-<div class="container d-flex flex-column justify-content-center" style="height:100vh;">
+<div class="container d-flex flex-column justify-content-center mt-5" style="height:100%;">
 
   <div id="columns">
     {% for review in reviews %}
     <a href="{% url 'reviews:detail' review.pk %}">
       <figure>
         <div class="col-cover"></div>
-        <figcaption>{{ review.title }}</figcaption>
-        <figcaption>{{ review.content }}</figcaption>
+        <figcaption>
+          {% if review.image1 %}
+            <img src="{{ review.image1.url }}" style="width:15rem;">
+          {% endif %}
+        </figcaption>
+        <figcaption><span class="col-title">제목: {{ review.title }}</span></figcaption>
+        <figcaption><span class="col-text">내용: {{ review.content|slice:":20" }}</span></figcaption>
       </figure>
     </a>
     {% endfor %}
