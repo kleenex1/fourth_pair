@@ -7,10 +7,12 @@
 {% block content %}
 <div class="container d-flex flex-column justify-content-center" style="height:100vh;">
     <form action="" method="POST" class="text-dark bg-body p-5">
-
+        
         {% csrf_token %}
-        <div class="text-center">
-            <h3>리뷰 작성</h3>
+        <div class="text-center d-flex justify-content-center">
+            <a class="me-auto" href="{% url 'reviews:index' %}"><i class="fa-solid fa-arrow-left"></i> <span class="fs-6">목록으로</span></a>
+            
+            <h2>리뷰 작성</h2>
         </div>
         <div class="my-3">
             {{ form.title|attr:"placeholder:제목"}}
@@ -42,6 +44,6 @@
             <button type="submit" class="btn btn-outline-secondary">수정-✨</button>
         </div>
     </form>
-
+    
 </div>
 {% endblock %}
