@@ -3,6 +3,7 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here.
@@ -12,6 +13,7 @@ def main(request):
     return render(request, "accounts/main.html")
 
 
+@login_required
 def index(request):
     users = get_user_model().objects.all()
     return render(
@@ -58,10 +60,12 @@ def login(request):
     )
 
 
+@login_required
 def detail(request, pk):
     return render(request, "accounts/detail.html")
 
 
+@login_required
 def update(request):
     if request.method == "POST":
         form = CustomUserChangeForm(request.POST, instance=request.user)
@@ -79,6 +83,7 @@ def update(request):
     )
 
 
+@login_required
 def logout(request):
     auth_logout(request)
     return redirect("accounts:main")

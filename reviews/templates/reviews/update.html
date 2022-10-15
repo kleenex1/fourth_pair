@@ -1,22 +1,16 @@
 {% extends 'base.html' %}
 
-
 {% load widget_tweaks %}
-
-{% block content %}
-<form action="" method="POST" class="text-dark bg-body p-5">
-
 {% load django_bootstrap5%}
 
 
 {% block content %}
 <div class="container d-flex flex-column justify-content-center" style="height:100vh;">
+    <form action="" method="POST" class="text-dark bg-body p-5">
 
-<form action="" method="POST">
-
-    {% csrf_token %}
+        {% csrf_token %}
         <div class="text-center">
-        <h3>리뷰 작성</h3>
+            <h3>리뷰 작성</h3>
         </div>
         <div class="my-3">
             {{ form.title|attr:"placeholder:제목"}}
@@ -35,22 +29,19 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="my-1">
-          {{ form.image1 }}
+        <div class="my-2">
+            {{ form.image1 }}
         </div>
-        <div class="my-1">
+        <div class="my-2">
             선택:&nbsp;{{ form.image2 }}
         </div>
-        <div class="my-1 mb-5">
+        <div class="my-2 mb-5">
             선택:&nbsp;{{ form.image3 }}
         </div>
         <div class="d-flex justify-content-end">
-        <button type="submit" class="btn btn-outline-secondary">수정-✨</button>
+            <button type="submit" class="btn btn-outline-secondary">수정-✨</button>
         </div>
     </form>
-   
-    {% comment %} <a class="btn btn-outline-primary" href="{% url 'reviews:detail' review.pk %}">내맘속에수정-✨</a> {% endcomment %}
-</form>
 
 </div>
 {% endblock %}
