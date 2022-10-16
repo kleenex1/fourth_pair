@@ -649,7 +649,19 @@ app_name = ' reviews'
 <hr>
 <br>
 
+![ezgif-2-fea673596e](https://user-images.githubusercontent.com/101690522/196039573-55304803-dae2-4f79-bc10-b5034d9b11b3.gif)
+![ezgif-2-dc8d004723](https://user-images.githubusercontent.com/101690522/196039576-d3b9b7f2-2c4c-4065-bbc6-34c8a32c6092.gif)
+
+
 ## 5. 프로젝트를 통해 배운 점 및 느낀점
+
+* decorator를 이용한 login 유효성 검사를 하였다.(Mixin 기능과 어떻게 다른지 찾아보기)
+* 미디어 파일을 통해 유저가 실제로 올릴 수 있도록 하였다.
+    * 기존 Review모델에 imagefield를 추가하고 media파일 경로(settings에서 지정)하는 법을 배웠다.
+* 배포까지 하려고 했으나 오류에 막혀 실패하였다. (heroku, pythonanywhere PAAS 이해하기)
+* 맥과 윈도우의 기본 폰트 차이로인해 같은 CSS설정이라도 약간의 마진부분이 차이가 났다.
+* 쿠키를 지우지 않아 로컬서버에서 새로고침을 하여도 내용이 바뀌지 않는 것을 알았다.
+* 짧은시간이지만 디자인과 설계부분에서 유저입장에서 어떻게 서비스를 이용하게 될 것인지 정한 점이 좋았다. 
 
 <br>
 
