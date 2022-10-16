@@ -16,6 +16,8 @@ urlpatterns = [
     path("accounts/<int:pk>/", views.detail, name="detail"),
     # 회원수정
     path("accounts/update/", views.update, name="update"),
+    # 회원삭제
+    path("accounts/delete/", views.delete, name="delete"),
     # path('', views.login, name='login'),
     # path('', views., name=''),
     # path('', views., name=''),

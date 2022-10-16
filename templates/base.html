@@ -34,6 +34,9 @@
           <li class="nav-item">
             <a class="nav-link text-white" href="{% url 'accounts:logout' %}">LOGOUT</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link text-white gear" href="{% url 'accounts:detail' request.user.pk %}"><i class="fa-solid fa-gear fa-lg"></i></a>
+          </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link text-white" href="{% url 'accounts:login' %}">LOGIN</a>

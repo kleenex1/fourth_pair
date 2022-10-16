@@ -7,6 +7,7 @@
 {% block content %}
 <div class="container d-flex flex-column justify-content-center" style="height:100vh;">
 
+  <a class="mb-3 text-white" href="{% url 'accounts:detail' request.user.pk %}"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
   <div class="wrap">
     <div class="cover"></div>
     <form action="" method="POST" class="form">

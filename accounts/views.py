@@ -87,3 +87,10 @@ def update(request):
 def logout(request):
     auth_logout(request)
     return redirect("accounts:main")
+
+
+@login_required
+def delete(request):
+    request.user.delete()
+    auth_logout(request)
+    return redirect("accounts:main")

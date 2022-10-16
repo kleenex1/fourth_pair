@@ -46,6 +46,17 @@
   height: 100%;
 }
 
+.trash {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #000;
+}
+
+.trash:hover {
+  color: #fff;
+}
+
 
 /* Signup */
 .wrap {

@@ -19,6 +19,7 @@
     first_name | {{ user.first_name }}<br />
     last_name | {{ user.last_name }}<br />
     email | {{ user.email }}<br />
+    <a class="trash" href="{% url 'accounts:delete' %}"><i class="fa-regular fa-trash-can fa-2x"></i></a>
   </div>
 </div>
 

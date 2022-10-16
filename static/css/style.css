@@ -35,6 +35,11 @@ h1, h2, h3, h4, p {
   z-index: 99;
 }
 
+.gear:hover {
+  transform: rotate(120deg) scale(1.2);
+  transition: all ease-in-out .8s;
+}
+
 
 /* Main */
 .main-cover {
