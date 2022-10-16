@@ -66,7 +66,8 @@
 - Django **Auth** 활용 회원 관리(회원 가입 / 회원 조회 / 로그인 / 로그아웃)
 
 
-
+<details>
+<summary>접기/펼치기</summary>
 ### 1.1 회원 관리
 
 <br>
@@ -640,7 +641,7 @@ app_name = ' reviews'
 ```
 '로그아웃'을 누르면 '메인' 페이지로 넘어옴
 ```
-
+</details>
 
 
 <br>
